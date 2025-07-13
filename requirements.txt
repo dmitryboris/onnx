@@ -1,0 +1,16 @@
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch
+torchvision
+onnx
+onnxruntime
+onnxruntime-gpu
+torch-tensorrt
+tensorrt
+Pillow
+numpy
+matplotlib
+opencv-python
+tqdm
+psutil
+tabulate
+onnxconverter-common

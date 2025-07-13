@@ -1,0 +1,30 @@
+| function   | dataloader_type   | precision   | device   | shape             | time (batch)   | time (per image)   | allocated_memory   | speedup   | FLOPs   | GPU util %   |
+|------------|-------------------|-------------|----------|-------------------|----------------|--------------------|--------------------|-----------|---------|--------------|
+| torch      | real              | fp16        | cuda     | (16, 3, 224, 224) | 4.912 ms       | 0.307 ms           | 348.2 MB           | 28.5x     | N/A     | N/A          |
+| torch      | real              | fp16        | cuda     | (32, 3, 224, 224) | 9.330 ms       | 0.292 ms           | 348.2 MB           | 15.0x     | N/A     | N/A          |
+| torch      | real              | fp16        | cuda     | (48, 3, 224, 224) | 14.285 ms      | 0.298 ms           | 348.2 MB           | 9.8x      | N/A     | N/A          |
+| torch      | real              | fp16        | cuda     | (64, 3, 224, 224) | 19.399 ms      | 0.303 ms           | 348.2 MB           | 7.2x      | N/A     | N/A          |
+| onnx       | real              | fp16        | cuda     | (16, 3, 224, 224) | 8.612 ms       | 0.538 ms           | 36.8 MB            | 16.2x     | N/A     | N/A          |
+| onnx       | real              | fp16        | cuda     | (32, 3, 224, 224) | 17.576 ms      | 0.549 ms           | 36.8 MB            | 8.0x      | N/A     | N/A          |
+| onnx       | real              | fp16        | cuda     | (48, 3, 224, 224) | 26.634 ms      | 0.555 ms           | 36.8 MB            | 5.2x      | N/A     | N/A          |
+| onnx       | real              | fp16        | cuda     | (64, 3, 224, 224) | 36.486 ms      | 0.570 ms           | 36.8 MB            | 3.8x      | N/A     | N/A          |
+| torch_trt  | real              | fp16        | cuda     | (16, 3, 224, 224) | 5.184 ms       | 0.324 ms           | 174.4 MB           | 27.0x     | N/A     | N/A          |
+| torch_trt  | real              | fp16        | cuda     | (32, 3, 224, 224) | 8.657 ms       | 0.271 ms           | 174.4 MB           | 16.2x     | N/A     | N/A          |
+| torch_trt  | real              | fp16        | cuda     | (48, 3, 224, 224) | 12.213 ms      | 0.254 ms           | 174.4 MB           | 11.4x     | N/A     | N/A          |
+| torch_trt  | real              | fp16        | cuda     | (64, 3, 224, 224) | 15.655 ms      | 0.245 ms           | 174.4 MB           | 8.9x      | N/A     | N/A          |
+| torch      | real              | fp32        | cuda     | (16, 3, 224, 224) | 7.839 ms       | 0.490 ms           | 465.7 MB           | 17.8x     | N/A     | N/A          |
+| torch      | real              | fp32        | cuda     | (32, 3, 224, 224) | 16.447 ms      | 0.514 ms           | 465.7 MB           | 8.5x      | N/A     | N/A          |
+| torch      | real              | fp32        | cuda     | (48, 3, 224, 224) | 24.921 ms      | 0.519 ms           | 465.7 MB           | 5.6x      | N/A     | N/A          |
+| torch      | real              | fp32        | cuda     | (64, 3, 224, 224) | 33.829 ms      | 0.529 ms           | 465.7 MB           | 4.1x      | N/A     | N/A          |
+| onnx       | real              | fp32        | cuda     | (16, 3, 224, 224) | 8.637 ms       | 0.540 ms           | 36.8 MB            | 16.2x     | N/A     | N/A          |
+| onnx       | real              | fp32        | cuda     | (32, 3, 224, 224) | 17.689 ms      | 0.553 ms           | 36.8 MB            | 7.9x      | N/A     | N/A          |
+| onnx       | real              | fp32        | cuda     | (48, 3, 224, 224) | 26.692 ms      | 0.556 ms           | 36.8 MB            | 5.2x      | N/A     | N/A          |
+| onnx       | real              | fp32        | cuda     | (64, 3, 224, 224) | 36.770 ms      | 0.575 ms           | 36.8 MB            | 3.8x      | N/A     | N/A          |
+| onnx       | real              | fp32        | cpu      | (16, 3, 224, 224) | 139.816 ms     | 8.739 ms           | -0.0 MB            | 1.0x      | N/A     | N/A          |
+| onnx       | real              | fp32        | cpu      | (32, 3, 224, 224) | 269.364 ms     | 8.418 ms           | -0.0 MB            | 0.5x      | N/A     | N/A          |
+| onnx       | real              | fp32        | cpu      | (48, 3, 224, 224) | 389.388 ms     | 8.112 ms           | -0.0 MB            | 0.4x      | N/A     | N/A          |
+| onnx       | real              | fp32        | cpu      | (64, 3, 224, 224) | 507.591 ms     | 7.931 ms           | -0.0 MB            | 0.3x      | N/A     | N/A          |
+| torch_trt  | real              | fp32        | cuda     | (16, 3, 224, 224) | 7.240 ms       | 0.452 ms           | 174.0 MB           | 19.3x     | N/A     | N/A          |
+| torch_trt  | real              | fp32        | cuda     | (32, 3, 224, 224) | 13.184 ms      | 0.412 ms           | 174.0 MB           | 10.6x     | N/A     | N/A          |
+| torch_trt  | real              | fp32        | cuda     | (48, 3, 224, 224) | 19.641 ms      | 0.409 ms           | 174.0 MB           | 7.1x      | N/A     | N/A          |
+| torch_trt  | real              | fp32        | cuda     | (64, 3, 224, 224) | 26.297 ms      | 0.411 ms           | 174.0 MB           | 5.3x      | N/A     | N/A          |
